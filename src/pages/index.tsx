@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import Gift from "../components/Gift";
+import Door from "../components/Door/Door";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Gift />
+      <Door />
     </div>
   );
 };

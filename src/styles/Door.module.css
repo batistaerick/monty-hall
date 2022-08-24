@@ -1,0 +1,14 @@
+.door {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: chocolate;
+
+  /* temp */
+  height: var(--height-door-area);
+  width: var(--width-door-area);
+}
+
+.number {
+}
