@@ -3,7 +3,8 @@ import Door from "../components/Door/Door";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div style={{ display: "flex" }}>
+      <Door />
       <Door />
     </div>
   );
