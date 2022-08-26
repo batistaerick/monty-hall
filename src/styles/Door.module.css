@@ -44,3 +44,17 @@
   width: 100%;
   background-color: #ddd;
 }
+
+.selected {
+  border-left: 5px solid yellow;
+  border-top: 5px solid yellow;
+  border-right: 5px solid yellow;
+}
+
+.selected .number {
+  color: yellow;
+}
+
+.selected .doorHandle {
+  background-color: yellow;
+}
