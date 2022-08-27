@@ -1,29 +1,29 @@
 import { FC } from "react";
 import DoorModel from "../../models/DoorModel";
 import styles from "../../styles/Door.module.css";
+import Gift from "../Gift/Gift";
 
 interface DoorProps {
-  doorModel: DoorModel;
+  door: DoorModel;
   onChange: (newDoor: DoorModel) => void;
 }
 
-const Door: FC<DoorProps> = ({ doorModel, onChange }) => {
-  const selectedStyle =
-    doorModel.selected && !doorModel.opened ? styles.selected : "";
+const Door: FC<DoorProps> = ({ door, onChange }) => {
+  const selectedStyle = door.selected && !door.opened ? styles.selected : "";
 
   const changeSelection = () => {
-    onChange(doorModel.changeSelection());
+    onChange(door.changeSelection());
   };
 
   const openTheDoor = (event: any | undefined) => {
     event?.stopPropagation();
-    onChange(doorModel.open());
+    onChange(door.open());
   };
 
   const doorRender = () => {
     return (
       <div className={styles.door}>
-        <div className={styles.number}>{doorModel.number}</div>
+        <div className={styles.number}>{door.number}</div>
         <div className={styles.doorHandle} onClick={openTheDoor}></div>
       </div>
     );
@@ -32,7 +32,7 @@ const Door: FC<DoorProps> = ({ doorModel, onChange }) => {
   return (
     <div className={styles.area} onClick={changeSelection}>
       <div className={`${styles.frame} ${selectedStyle}`}>
-        {doorModel.opened ? false : doorRender()}
+        {door.closed ? doorRender() : door.hasGift ? <Gift /> : false}
       </div>
       <div className={styles.floor}></div>
     </div>

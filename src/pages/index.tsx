@@ -5,13 +5,13 @@ import { createDoors, updateDoors } from "../functions/doors";
 import DoorModel from "../models/DoorModel";
 
 const Home: NextPage = () => {
-  const [doors, setDoors] = useState<DoorModel[]>(createDoors(4, 1));
+  const [doors, setDoors] = useState<DoorModel[]>(createDoors(4, 3));
 
   const doorRender = () => {
     return doors.map((door) => (
       <Door
         key={door.number}
-        doorModel={door}
+        door={door}
         onChange={(newDoor) => setDoors(updateDoors(doors, newDoor))}
       />
     ));

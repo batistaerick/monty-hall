@@ -32,6 +32,10 @@ class DoorModel {
     return this.#opened;
   }
 
+  get closed() {
+    return !this.#opened;
+  }
+
   deselect() {
     return new DoorModel(this.number, this.hasGift, false, this.opened);
   }
