@@ -1,23 +1,11 @@
 import type { NextPage } from "next";
-import { useState } from "react";
-import Door from "../components/Door/Door";
-import { createDoors, updateDoors } from "../functions/doors";
-import DoorModel from "../models/DoorModel";
 
 const Home: NextPage = () => {
-  const [doors, setDoors] = useState<DoorModel[]>(createDoors(4, 3));
-
-  const doorRender = () => {
-    return doors.map((door) => (
-      <Door
-        key={door.number}
-        door={door}
-        onChange={(newDoor) => setDoors(updateDoors(doors, newDoor))}
-      />
-    ));
-  };
-
-  return <div style={{ display: "flex" }}>{doorRender()}</div>;
+  return (
+    <div>
+      <h1>Start</h1>
+    </div>
+  );
 };
 
 export default Home;
